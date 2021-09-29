@@ -4,7 +4,7 @@
  * https://solidity.readthedocs.io/en/latest/080-breaking-changes.html
  */
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.5.16 <0.9.0;
+pragma solidity ^0.8.0;
 
 contract SimpleBank {
 
@@ -45,7 +45,7 @@ contract SimpleBank {
     // Typically, called when invalid data is sent
     // Added so ether sent to this contract is reverted if the contract fails
     // otherwise, the sender's money is transferred to contract
-    fallback() external payable {
+    fallback () external {
         revert();
     }
 
