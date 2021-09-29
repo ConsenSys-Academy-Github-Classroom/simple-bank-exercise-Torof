@@ -10,7 +10,6 @@ contract SimpleBank {
 
     /* State variables
      */
-    uint potMoney;
     
     // Fill in the visibility keyword. 
     // Hint: We want to protect our users balance from other contracts
@@ -50,10 +49,6 @@ contract SimpleBank {
         revert();
     }
 
-    //Value sent with .transfer() or .send() is added to a pot money. Don't give your money for free next time
-    receive() external payable {
-      potMoney += msg.value;
-    }
     /// @notice Get balance
     /// @return The balance of the user
     function getBalance() public view returns (uint) {
